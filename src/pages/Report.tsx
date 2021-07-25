@@ -64,7 +64,7 @@ const Report: React.FC = () => {
               yAxisId={0}
               // dot={false}
             >
-              <LabelList dataKey="waterUsed" position="bottom" offset={10} />
+              {/* <LabelList dataKey="waterUsed" position="bottom" offset={10} /> */}
             </Line>
             <Line
               type="monotone"
