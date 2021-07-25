@@ -9,11 +9,12 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, home } from 'ionicons/icons';
+import { school, barChart, home, ribbon } from 'ionicons/icons';
 
 import Home from './pages/Home';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Compete from './pages/Compete';
+import Learn from './pages/Learn';
+import Report from './pages/Report';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,12 +44,16 @@ const App: React.FC = () => (
             <Home />
           </Route>
 
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/compete">
+            <Compete />
           </Route>
 
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/report">
+            <Report />
+          </Route>
+
+          <Route exact path="/learn">
+            <Learn />
           </Route>
 
           <Route exact path="/">
@@ -62,14 +67,19 @@ const App: React.FC = () => (
             <IonLabel>Home</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="compete" href="/compete">
+            <IonIcon icon={ribbon} />
+            <IonLabel>Compete</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="report" href="/report">
+            <IonIcon icon={barChart} />
+            <IonLabel>Report</IonLabel>
+          </IonTabButton>
+
+          <IonTabButton tab="learn" href="/learn">
+            <IonIcon icon={school} />
+            <IonLabel>Learn</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
