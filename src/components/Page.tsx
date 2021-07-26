@@ -16,12 +16,14 @@ const Page: React.FC<PageProps> = ({ name, children }) => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        {/* <IonToolbar>
           <IonTitle>{name}</IonTitle>
-        </IonToolbar>
+        </IonToolbar> */}
       </IonHeader>
 
       <IonContent fullscreen>
+        <div style={{ height: 75 }}></div>
+
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">{name}</IonTitle>

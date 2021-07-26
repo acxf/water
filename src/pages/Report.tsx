@@ -28,8 +28,20 @@ const Report: React.FC = () => {
     { name: 'S', b: 270 },
   ];
 
+  const data2: any[] = [
+    { name: 'M', waterUsed: 350 - 50, b: 320 - 50 },
+    { name: 'T', waterUsed: 370 - 50, b: 320 - 50 },
+    { name: 'W', waterUsed: 290 - 50, b: 320 - 50 },
+    { name: 'T', waterUsed: 276 - 50, b: 320 - 50 },
+    { name: 'F', waterUsed: 315 - 50, b: 320 - 50 },
+    { name: 'Today', waterUsed: 300 - 50, b: 320 - 50 },
+    { name: 'S', b: 320 - 50 },
+  ];
+
   return (
     <Page name="Report">
+      {/* <div style={{ color: 'rgba(0,0,0,0)' }}>.</div> */}
+
       <IonSegment value="weekly">
         <IonSegmentButton value="weekly">
           <IonLabel>Weekly</IonLabel>
@@ -79,11 +91,46 @@ const Report: React.FC = () => {
 
       <IonCard>
         <IonCardHeader>
+          <IonCardTitle>Average Household Usage</IonCardTitle>
+        </IonCardHeader>
+
+        <IonCardContent>
+          <LineChart
+            width={330}
+            height={200}
+            data={data2}
+            margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
+          >
+            <XAxis dataKey="name" />
+            <YAxis width={35} unit="L" />
+            {/* <CartesianGrid stroke="#f5f5f5" /> */}
+            <Line
+              type="monotone"
+              dataKey="waterUsed"
+              stroke="#67ceee"
+              yAxisId={0}
+              // dot={false}
+            >
+              {/* <LabelList dataKey="waterUsed" position="bottom" offset={10} /> */}
+            </Line>
+            <Line
+              type="monotone"
+              dataKey="b"
+              stroke="#67eeab"
+              yAxisId={0}
+              dot={false}
+            />
+          </LineChart>
+        </IonCardContent>
+      </IonCard>
+      {/* 
+      <IonCard>
+        <IonCardHeader>
           <IonCardTitle>Bathroom Toilet</IonCardTitle>
         </IonCardHeader>
 
         <IonCardContent>5 Flushes</IonCardContent>
-      </IonCard>
+      </IonCard> */}
     </Page>
   );
 };

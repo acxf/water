@@ -1,0 +1,17 @@
+:root {
+  --ion-background-color: #5cb8e2;
+  --ion-card-background: #f7f7f7;
+  --ion-tab-bar-color: #a0a0a0;
+  --ion-tab-bar-color-selected: #5cb8e2;
+  --ion-tab-bar-background: #f7f7f7;
+}
+
+ion-title,
+ion-segment-button {
+  --color: #f7f7f7;
+}
+
+ion-tab-bar {
+  padding-top: 5px;
+  background-color: #f7f7f7;
+}
